@@ -4,6 +4,9 @@ const app = express()
  app.use(bodyParser.urlencoded({ extended: false }));
 const PORT = process.env.PORT || 3000;
 app.get('/',(req,res)=>{
+     res.sendFile(__dirname+'/login.html');
+})
+app.get('/login',(req,res)=>{
     res.sendFile(__dirname+'/index.html')
 })
 app.post('/login',(req,res)=>{
@@ -16,3 +19,4 @@ app.post('/login',(req,res)=>{
     }
 })
 app.listen(PORT)
+
